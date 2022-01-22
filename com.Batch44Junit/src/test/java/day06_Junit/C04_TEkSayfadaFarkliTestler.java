@@ -67,7 +67,7 @@ public  class C04_TEkSayfadaFarkliTestler {
         if(actualSonucuYazisi.contains(arananKelime)){
             System.out.println("ali testi PASSED");
         }else {
-            System.out.println("ali testi FAILED");
+            System.out.println("ali testi FAILEDyy");
         }
 
 
