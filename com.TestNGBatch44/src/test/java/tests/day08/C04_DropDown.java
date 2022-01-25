@@ -35,15 +35,13 @@ public class C04_DropDown {
 
         driver.get("https://www.amazon.com/");
 
-
-
     }
 
     @Test
     public void dropdownTest1(){
         //  - Test 1
         //  Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin
-         dropdown=driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+        dropdown=driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
         select = new Select(dropdown);
 
         List<WebElement> optionList = select.getOptions();
@@ -68,18 +66,18 @@ public class C04_DropDown {
 
         //  3. Bulunan sonuc sayisini yazdirin
                WebElement Result=driver.findElement(By.xpath("(//span[@dir='auto'])[1]"));
-               System.out.println("Bulunan sonuc Sayısı: " + Result.getText());
+               System.out.println("Bulunan sonuc Sayısı: " + Result.getText().substring(12).replaceAll("\\D",""));
 
 
         // 4. Sonucun Java kelimesini icerdigini test edin
-               String actualTitle=(driver.findElement(By.xpath("(//span[@dir='auto'])[3]"))).getText();
-               actualTitle=actualTitle.replaceAll("\"","");
-               String expectedTitle="Java";
-               Assert.assertEquals(actualTitle,expectedTitle);
+               String result = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']")).getText();
+               String expected="Java";
+               Assert.assertTrue(result.contains("Java"),expected);
     }
 
     @AfterClass
     public void teardown(){
+
         driver.close();
     }
 }
