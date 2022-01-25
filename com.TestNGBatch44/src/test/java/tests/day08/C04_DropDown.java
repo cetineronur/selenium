@@ -67,14 +67,15 @@ public class C04_DropDown {
 
 
         //  3. Bulunan sonuc sayisini yazdirin
-        WebElement sonucSayisi=driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
-        String actualSonuc=sonucSayisi.getText();
-        System.out.println(actualSonuc.substring(12).replaceAll("\\D", ""));
+               WebElement Result=driver.findElement(By.xpath("(//span[@dir='auto'])[1]"));
+               System.out.println("Bulunan sonuc Sayısı: " + Result.getText());
 
 
-        //  4. Sonucun Java kelimesini icerdigini test edin
-        String arananKelime="Java";
-        Assert.assertFalse(actualSonuc.contains("Java"),arananKelime);
+        // 4. Sonucun Java kelimesini icerdigini test edin
+               String actualTitle=(driver.findElement(By.xpath("(//span[@dir='auto'])[3]"))).getText();
+               actualTitle=actualTitle.replaceAll("\"","");
+               String expectedTitle="Java";
+               Assert.assertEquals(actualTitle,expectedTitle);
     }
 
     @AfterClass
