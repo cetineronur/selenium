@@ -48,26 +48,24 @@ public class H4 {
         select =new Select(birthDay);
         List<WebElement> birthdayList = select.getOptions();
 
-        for (WebElement each:birthdayList) {
-            System.out.print(each.getText()+" ");
-        }
+        birthdayList.stream().forEach(t-> System.out.print(t.getText()+"-"));
+
+
         System.out.println();
         // 4) DOGUM TARiHi BOLUMUNDEKi AYLARIN LiSTESiNi ALIN
         WebElement birthdayMonth = driver.findElement(By.xpath("//select[@id='month']"));
         select = new Select(birthdayMonth);
         List<WebElement> birtdayMonth=select.getOptions();
 
-        for (WebElement each:birtdayMonth) {
-            System.out.print(each.getText()+" ");
-        }
+       birtdayMonth.stream().forEach(t-> System.out.print(t.getText()+"-"));
+
         System.out.println();
         // 5) DOGUM TARiHi BOLUMUNDEKi YILLARIN LiSTESiNi ALIN
         WebElement year= driver.findElement(By.xpath("//select[@id='year']"));
         select = new Select(year);
         List<WebElement> yearList = select.getOptions();
 
-        for (WebElement each:yearList) {
-            System.out.print(each.getText()+" ");
-        }
+        yearList.stream().forEach(t-> System.out.print(t.getText()+"-"));
+
     }
 }
