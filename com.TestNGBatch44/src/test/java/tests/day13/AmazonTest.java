@@ -27,15 +27,9 @@ public class AmazonTest extends TestBase {
 
     @Test
     public void warning_letter() throws InterruptedException {
-       driver.get("https://www.facebook.com/");
+       driver.get("https://de-de.facebook.com/");
       driver.findElement(By.xpath("(//button[@value='1'])[3]")).click();
         Actions actions = new Actions(driver);
-       /*driver.findElement(By.xpath("//input[@name='email']"));
-       actions.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
-               sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).click();*/
-
-
-       //driver.findElement(By.xpath("//a[text()='Deutsch']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("(//a[@role='button'])[2]")).click();
        WebElement firstname=driver.findElement(By.xpath("//input[@name='firstname']"));
@@ -47,10 +41,9 @@ public class AmazonTest extends TestBase {
        WebElement birthday= driver.findElement(By.xpath("//select[@id='day']"));
         Select select = new Select(birthday);
         select.selectByValue("21");
-        actions.sendKeys(Keys.TAB).
-
-        sendKeys("Kas").
-        sendKeys(Keys.TAB).sendKeys("2009").sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
+        actions.sendKeys(Keys.TAB).sendKeys("Kas").
+        sendKeys(Keys.TAB).sendKeys("2009").
+                sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
         driver.findElement(By.xpath("(//input[@type='radio'])[2]")).click();
         driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
         Thread.sleep(5000);
