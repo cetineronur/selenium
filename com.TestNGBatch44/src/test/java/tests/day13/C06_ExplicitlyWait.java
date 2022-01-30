@@ -18,6 +18,6 @@ public class C06_ExplicitlyWait extends TestBase {
 
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
-        wait.until(ExpectedCondition)
+       // wait.until(ExpectedCondition)
     }
 }
