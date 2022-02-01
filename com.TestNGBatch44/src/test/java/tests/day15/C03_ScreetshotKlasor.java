@@ -19,7 +19,7 @@ public class C03_ScreetshotKlasor extends TestBase {
     @Test
     public void test01() throws IOException {
         driver.get("https://www.amazon.com");
-         searchBox= driver.findElement(By.id("twotabsearchtextbox"));
+        searchBox= driver.findElement(By.id("twotabsearchtextbox"));
         searchBox.sendKeys("Java", Keys.ENTER);
         tumSayfaScreenshot();
     }

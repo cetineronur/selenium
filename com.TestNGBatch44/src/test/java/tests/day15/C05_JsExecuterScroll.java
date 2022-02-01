@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
 
@@ -16,14 +17,17 @@ public class C05_JsExecuterScroll extends TestBase {
         //  1- Yeni bir class olusturun : ScroolInto
         //  2- hotelmycamp anasayfasina gidin
             driver.get("https://www.hotelmycamp.com");
+
+        //  3- 2 farkli test method’u olusturarak actions clasi ve Js Executor kullanarak asagidaki oda turlerinden ust sira ortadaki odayi tiklayin
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
-
         driver.findElement(By.xpath("(//a[@class='btn-custom'])[2]")).click();
         Thread.sleep(1000);
 
-        //  3- 2 farkli test method’u olusturarak actions clasi ve Js Executor kullanarak asagidaki oda turlerinden ust sira ortadaki odayi tiklayin
         //  4- istediginiz oda inceleme sayfasi acildigini test edin
+        String url= driver.getCurrentUrl();
+        String expected = "https://www.hotelmycamp.com/RoomDetail/147";
+        Assert.assertEquals(url,expected);
 
     }
 
