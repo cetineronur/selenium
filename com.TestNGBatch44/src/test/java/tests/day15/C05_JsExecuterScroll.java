@@ -11,7 +11,7 @@ import utilities.TestBase;
 public class C05_JsExecuterScroll extends TestBase {
 
     @Test
-    public void scroolaction(){
+    public void scroolaction() throws InterruptedException {
 
         //  1- Yeni bir class olusturun : ScroolInto
         //  2- hotelmycamp anasayfasina gidin
@@ -20,6 +20,7 @@ public class C05_JsExecuterScroll extends TestBase {
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
 
         driver.findElement(By.xpath("(//a[@class='btn-custom'])[2]")).click();
+        Thread.sleep(1000);
 
         //  3- 2 farkli test method’u olusturarak actions clasi ve Js Executor kullanarak asagidaki oda turlerinden ust sira ortadaki odayi tiklayin
         //  4- istediginiz oda inceleme sayfasi acildigini test edin
