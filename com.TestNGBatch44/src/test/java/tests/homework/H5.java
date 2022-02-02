@@ -12,6 +12,8 @@ import utilities.TestBase;
 import java.io.File;
 import java.io.IOException;
 
+
+
 public class H5 extends TestBase {
     //Test Case 4
     //Kaydedilen adrese edit yapacagiz
@@ -21,11 +23,14 @@ public class H5 extends TestBase {
     //Datalari girdikten sonra ve kayit ettikten sonra screenshot alin
     //
     //Address saved yazisi almamalisiniz…
+
+
     @BeforeMethod
     public void inception() throws InterruptedException {
+        Actions actions = new Actions(driver);
         driver.get("https://amazon.com");
         WebElement x = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
-        Actions actions = new Actions(driver);
+         actions = new Actions(driver);
         actions.moveToElement(x).perform();
         WebElement signIn = driver.findElement(By.className("nav-line-1-container"));
         signIn.click();
@@ -43,19 +48,20 @@ public class H5 extends TestBase {
         //•   Your adress sayfasina gidin
         WebElement yourAdresses= driver.findElement(By.xpath("//a[text()='Your addresses']"));
 
-       actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).click(yourAdresses).perform();
+       actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.TAB).click(yourAdresses).perform();
         //•   Add adres e click yapin
         driver.findElement(By.id("ya-myab-plus-address-icon")).click();
     }
     @Test
     public void Test1() throws IOException, InterruptedException {
+        Actions actions = new Actions(driver);
         //Test Case 1
         //Country/Region:Slovenia
         WebElement dropdownElementi= driver.findElement(By.xpath("(//span[@class='a-button-text a-declarative'])[2]"));
         Select select=new Select(dropdownElementi);
         select.selectByVisibleText("Slovenia");
         //Full name : Mahmut Mehmet
-        Actions actions=new Actions(driver);
+         actions=new Actions(driver);
         WebElement name= driver.findElement(By.xpath("//input[@id='address-ui-widgets-enterAddressFullName']"));
         actions.click(name).sendKeys("Mahmut Mehmet")
                 //Street address: Mahmutpasa
@@ -72,13 +78,15 @@ public class H5 extends TestBase {
         WebElement addAdressButon= driver.findElement(By.xpath("(//input[@class='a-button-input'])[3]"));
         actions.click(addAdressButon).perform();
         //“We couldn't verify your address. Please make sure it's correct before you save it”.
-        WebElement uyarıYazısı= driver.findElement(By.xpath("(//div[@class='a-section'])[4]"));
+        WebElement uyarıYazısı= driver.findElement(By.xpath("(//span[@class='a-list-item'])[1]"));
         String actualText= uyarıYazısı.getText();
         String expectedText="We couldn't verify your address. Please make sure it's correct before you save it.";
         Assert.assertEquals(actualText,expectedText);
+        Thread.sleep(2000);
     }
     @Test
     public void Test2() throws InterruptedException, IOException {
+        Actions actions = new Actions(driver);
         //   Amazon sayfasi Adres Sayfasi Testi
         //   1-•  www.amazon.com adresine gidin
         //     •  Hello sign in kutusu uzerinde imlecinizi 2 sn bekletin ve acilan kutudan sign-in a gidin
@@ -95,21 +103,22 @@ public class H5 extends TestBase {
         //   •    Account a tiklayin ve acilan sayfanin altinda
         actions.sendKeys(Keys.PAGE_DOWN).perform();*/
         //   •    Your adress sayfasina gidin
-        Actions actions =new Actions(driver);
+         actions =new Actions(driver);
 
         //   Test Case 2
         //   Country/Region:Turkey
         WebElement dropdownElementi= driver.findElement(By.xpath("(//select[@class='a-native-dropdown a-spacing-none'])[1]"));
         Thread.sleep(2000);
-        actions.click(dropdownElementi);
+       // actions.click(dropdownElementi);
         Select select=new Select(dropdownElementi);
-        select.selectByIndex(224);
-        Thread.sleep(250);
-        actions.sendKeys(Keys.ENTER).perform();
+        select.selectByVisibleText("Turkey");
+              Thread.sleep(350);
+       actions.sendKeys(Keys.ENTER).perform();
+
         //   Full name : Mahmut Mehmet
         Thread.sleep(1000);
         driver.findElement(By.xpath("//input[@name='address-ui-widgets-enterAddressFullName']")).click();
-        actions.sendKeys(Keys.TAB).sendKeys("Mahmut Mehmet").
+        actions.sendKeys("Mahmut Mehmet").
                 //   Street address: Mahmutpasa
                         sendKeys(Keys.TAB).sendKeys("Mahmutpasa").sendKeys(Keys.TAB).
                 //   City:Ljubljana
@@ -128,14 +137,15 @@ public class H5 extends TestBase {
         File geciciResim=zipUyari.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(geciciResim,webelementSS);
 
-        WebElement phonnumberUyari= driver.findElement(By.xpath("//div[text()='Please provide a valid phone number']"));
+        WebElement phonnumberUyari= driver.findElement(By.xpath("(//div[@class='a-section a-spacing-none a-spacing-top-micro address-ui-widgets-inline-error-alert'])[5]"));
         TakesScreenshot tss1 = (TakesScreenshot) driver;
         File webelementSS1=  new File("target/screenShot/phone.jpeg");
         File geciciResim1=phonnumberUyari.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(geciciResim1,webelementSS1);
     }
     @Test
-    public void Test3() throws IOException, InterruptedException {
+    public void Test5() throws IOException, InterruptedException {
+        Actions actions = new Actions(driver);
         driver.findElement(By.xpath("//a[@id='ya-myab-address-edit-btn-0']")).click(); // adress  Edit butonu
         WebElement city = driver.findElement(By.xpath("//input[@id='address-ui-widgets-enterAddressCity']"));
         city.sendKeys("Ljubljana");
@@ -150,10 +160,11 @@ public class H5 extends TestBase {
     }
     @Test
     public void Test4() throws IOException, InterruptedException {
+        Actions actions = new Actions(driver);
         WebElement newAdresElementi = driver.findElement(By.xpath("//div[@id='ya-myab-plus-address-icon']"));
         newAdresElementi.click();
         WebElement countryElementi = driver.findElement(By.xpath("(//span[@class='a-button-text a-declarative'])[1]"));
-        Actions actions = new Actions(driver);
+         actions = new Actions(driver);
         actions.click(countryElementi).keyDown("S").keyDown("L").sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
         WebElement nameElementi = driver.findElement(By.xpath("//input[@id='address-ui-widgets-enterAddressFullName']"));
         nameElementi.clear();

@@ -9,8 +9,6 @@ import utilities.Driver;
 public class C03_FacebookLogin {
 
 
-
-
     @Test
     public void test01() throws InterruptedException {
         //  1 - https://www.facebook.com/ adresine gidin

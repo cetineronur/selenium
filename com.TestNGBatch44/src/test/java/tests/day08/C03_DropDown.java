@@ -67,7 +67,7 @@ public class C03_DropDown {
 
     @AfterMethod
     public void teardown(){
-        driver.close();
+        //driver.close();
     }
 
 
