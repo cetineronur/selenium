@@ -32,14 +32,17 @@ public class C02_WindowsHandle {
         WebElement sayfadakiYaziElementi=driver.findElement(By.tagName("h3"));
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(sayfadakiYaziElementi.getText(), "Opening a new window","sayfadaki yazi beklenenden farkli");
+
         //● Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
         softAssert.assertEquals(driver.getTitle(),"The Internet","sayfa title'i beklenenden farkli");
+
         //● Click Here butonuna basın.
         // soruda windowhandle degerini bilmedigim bir window aciliyor
         // o sayfanin window handle degerini bulmak icin gectigim sayfalardaki
         // window handle degerlerini kaydetmeliyim
         String windowHandleDegeri1=driver.getWindowHandle();
         driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
         // once acilan yeni sayfanin handle degerini elde etmeliyim
         // once tum handle degerlerini alip bir set'e koyalim
