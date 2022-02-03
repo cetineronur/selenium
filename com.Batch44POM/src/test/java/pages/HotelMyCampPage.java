@@ -7,35 +7,111 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HotelMyCampPage {
     public HotelMyCampPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[text()='Log in']")
-    public WebElement ilkloginLinki;
-    @FindBy(xpath = "//input[@class='form-control required']")
-    public WebElement userNameBox;
-    @FindBy(xpath = "//input[@class='form-control required password']")
-    public WebElement passwordBox;
-    @FindBy(xpath = "//input[@value='Log in']")
-    public WebElement loginButonu;
-    @FindBy(xpath = "//a[@class='btn btn-circle btn-default']")
-    public WebElement adduser;
+    // https://www.hotelmycamp.com/ main page log in click button
+    @FindBy(xpath = "//a[@href='/Account/Logon']")
+    public WebElement mainPageLogin;
+    // mainpage>>logIn admin page userid box
     @FindBy(xpath = "//input[@id='UserName']")
-    public WebElement addUserUserName;//add user sayfasi username
+    public WebElement userNameBox;
+    // mainpage>>logIn admin page password box
+    @FindBy(xpath = "//input[@id='Password']")
+    public WebElement passwordBox;
+    // mainpage>>logIn admin page save click button
+    @FindBy(xpath = "//input[@id='btnSubmit']")
+    public WebElement userLogIn;
+    // mainpage>>logIn>>ADD USER  click button for adding new user management
+    @FindBy(xpath = "//a[@class='btn btn-circle btn-default']")
+    public WebElement addUserElement;
+    // mainpage>>LogIN>>AddUser>>usernamebox
+    @FindBy(xpath = "//input[@placeholder='UserName']")
+    public WebElement addusernamebox;
+    // mainpage>>LogIN>>AddUser>>usernamebox>>save
+    @FindBy(xpath = " //button[@type='submit']")
+    public WebElement saveclickbutton;
+    // mainpage>>LogIN>>AddUser>>passwordbox>>save
     @FindBy(xpath = "//input[@id='txtPassword']")
-    public WebElement addUserPassword;//add user sayfasi username
+    public WebElement adUserpasswordbox;
+    // mainpage>>LogIN>>AddUser>>emailbox
+    @FindBy(xpath = "//input[@id='Email']")
+    public WebElement adUseremailbox;
 
+    @FindBy(xpath = "//div[@class='validation-summary-errors']")
+    public WebElement usernamepasswordincorrect;
+
+    @FindBy(xpath ="//span[text()='ListOfUsers']")
+    public WebElement usernamepasswordcorrect;
+
+
+    public void bekle(int saniye){
+        try {
+            Thread.sleep(saniye*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void hotelMyCampLogin() {
         Driver.getDriver().navigate().to("https://www.hotelmycamp.com");
-        ilkloginLinki.click();
+        mainPageLogin.click();
         userNameBox.sendKeys("manager");
         passwordBox.sendKeys("Manager1!");
-        loginButonu.click();
-        adduser.click();
+        userLogIn.click();
+        addUserElement.click();
+
+    }
+
+    @DataProvider
+    public Object[][] testData() {
+
+        Object[][] test = new Object[1][3];
+        test[0][0] = (" ");
+        test[0][1] = ("mng");
+        test[0][2] = ("mistafa");
+
+        return test;
+    }
+
+    public List<String> listData() {
+
+        List<String> listdata = new ArrayList<>();
+        listdata.add(" ");
+        listdata.add("mng");
+        listdata.add("mistafa");
+        return listdata ;
+    }
+
+    public List<String> passwordData() {
+
+        List<String> passworddata = new ArrayList<>();
+        //passworddata .add("");
+        passworddata .add("istanbul34");
+        passworddata .add("Istanbul34");
+        passworddata .add("Ista");
+        passworddata .add("Istanbul34.");
+        return passworddata  ;
+    }
+
+
+
+
+    public List<String> emaillistData() {
+
+        List<String> emaildata = new ArrayList<>();
+        emaildata.add("");
+        emaildata.add("hshdgmail.com");
+        emaildata.add("mehmet@gmailcom");
+        emaildata.add("mehmet@gmail..com");
+
+        return emaildata ;
     }
 
 
