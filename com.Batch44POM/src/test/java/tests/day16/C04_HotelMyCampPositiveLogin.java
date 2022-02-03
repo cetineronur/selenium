@@ -5,25 +5,26 @@ import pages.HotelMyCampPage;
 import utilities.Driver;
 
 public class C04_HotelMyCampPositiveLogin {
+    @Test
+    public void positiveLoginTest() {
+        //https://www. hotelmycamp.com/ adresine git
+        Driver.getDriver().navigate().to("https://www.hotelmycamp.com");
+        //      login butonuna bas
+        //  test data username: manager,
+        //  test data password : Manager1!
+        //  Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
+        HotelMyCampPage hotelmycampPage = new HotelMyCampPage();
+        hotelmycampPage.ilkloginLinki.click();
+        hotelmycampPage.userNameBox.sendKeys("manager");
+        hotelmycampPage.passwordBox.sendKeys("Manager1!");
+        hotelmycampPage.loginButonu.click();
+    }
 
     @Test
-    public void pozitifLoginTest(){
-     //  1 ) Bir Class olustur : PositiveTest
-     //  2) Bir test method olustur positiveLoginTest()
-     //  https://www. hotelmycamp.com/ adresine git
-        Driver.getDriver().get("https://www.hotelmycamp.com/");
-
-     //  login butonuna bas
-        HotelMyCampPage hotelMyCampPage = new HotelMyCampPage();
-        hotelMyCampPage.firstLogin.click();
-
-     //  test data username: manager,
-        hotelMyCampPage.usernameBox.sendKeys("manager");
-
-     //  test data password : Manager1!
-        hotelMyCampPage.password.sendKeys("Manager1!");
-        hotelMyCampPage.login.click();
-
-     //  Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
+    public void methodTest() {
+        HotelMyCampPage hotelmycampPage = new HotelMyCampPage();
+        hotelmycampPage.hotelMyCampLogin();
     }
+
+
 }
