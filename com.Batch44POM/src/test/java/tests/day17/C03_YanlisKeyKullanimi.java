@@ -9,10 +9,11 @@ public class C03_YanlisKeyKullanimi {
     @Test
     public void test01(){
 
-        Driver.getDriver().get(ConfigReader.getProperty("HMCurl"));
-        // eger key olarak girdigimiz String configuration dosyasinda yoksa
-        // ConfigReader.getProperty() o keyi bulamaz
-        // ve nullpointerException firlatir
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
+        // eger key olarak girdigimiz String configuration.properties dosyasinda yoksa
+        // Ornegin : HMCUrl yerine HMCurl yazarsak,
+        // ConfigReader.getProperty() o key'i bulamaz
+        // ve nullPointerException firlatir
     }
 }

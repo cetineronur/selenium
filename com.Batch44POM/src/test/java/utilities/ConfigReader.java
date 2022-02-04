@@ -8,22 +8,31 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties properties;
+    public static Properties properties;
+
     static {
-        String path = "src/configuration.properties";
+
+        String path="src/configuration.properties";
+
         try {
-            FileInputStream fis = new FileInputStream(path);
-            properties = new Properties();
+
+            FileInputStream fis=new FileInputStream(path);
+            properties=new Properties();
             properties.load(fis);
             fis.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
-    public static String getProperty(String key) {
+
+    public static String getProperty(String key){
+
         return properties.getProperty(key);
     }
+
+
 }
