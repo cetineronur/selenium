@@ -48,10 +48,6 @@ public class C01_WebTableDinamikLocate {
         //3.method sutun numarasi verdigimde bana tum sutunu yazdirsin
         hmcWebTablePage.sutunYazdir(4);
 
-
-
-
     }
-
 
 }
