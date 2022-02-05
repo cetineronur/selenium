@@ -35,21 +35,31 @@ public class C02_WebTables {
         hmcWebTablePage = new HMCWebTablePage();
         List<WebElement> headerDAtaList = hmcWebTablePage.headerBirinciSatirDatalar;
         System.out.println("Tablodaki sutun sayisi : "+headerDAtaList.size());
-
+        System.out.println(hmcWebTablePage.tumBodyWebElement.getText());
+        List<WebElement> bodyTumDataList=hmcWebTablePage.tumBodyDatalariList;
+        System.out.println("Body'deki data sayisi : "+bodyTumDataList.size());
 
     }
 
 
-    @Test
+    @Test(dependsOnMethods = "loginT")
     public void printRows(){
         //       ○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         //   ● printRows( ) metodu oluşturun //tr
         //       ○ table body’sinde bulunan toplam satir(row) sayısını bulun.
+        hmcWebTablePage = new HMCWebTablePage();
+        System.out.println(hmcWebTablePage.satirlarListesi.size());
+
         //       ○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
+        List<WebElement> satirlarWebelementListesi=hmcWebTablePage.satirlarListesi;
+
+        for (WebElement each:satirlarWebelementListesi) {
+            System.out.println(each.getText());
+
+        }
         //       ○ 4.satirdaki(row) elementleri konsolda yazdırın.
-        System.out.println(hmcWebTablePage.tumBodyWebElement.getText());
-        List<WebElement> bodyTumDataList=hmcWebTablePage.tumBodyDatalariList;
-        System.out.println("Body'deki data sayisi : "+bodyTumDataList.size());
+        System.out.println();
+        System.out.println("4. satir : "+satirlarWebelementListesi.get(3).getText());
 
     }
 }

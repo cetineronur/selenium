@@ -66,4 +66,5 @@ public class HotelMyCampPage {
         loginButonu.click();
     }
 
+
 }
