@@ -22,8 +22,6 @@ public class C02_WebTables {
         hotelMyCampPage=new HotelMyCampPage();
         hotelMyCampPage.girisYap();
 
-
-
     }
 
     @Test
@@ -31,13 +29,10 @@ public class C02_WebTables {
         //   ● table( ) metodu oluşturun
         //       ○ Tüm table body’sinin boyutunu(sutun sayisi) bulun. /tbody
         //     //thead//tr[1]//td
-
-        hmcWebTablePage = new HMCWebTablePage();
-        List<WebElement> headerDAtaList = hmcWebTablePage.headerBirinciSatirDatalar;
-        System.out.println("Tablodaki sutun sayisi : "+headerDAtaList.size());
-        System.out.println(hmcWebTablePage.tumBodyWebElement.getText());
-        List<WebElement> bodyTumDataList=hmcWebTablePage.tumBodyDatalariList;
-        System.out.println("Body'deki data sayisi : "+bodyTumDataList.size());
+        hotelMyCampPage=new HotelMyCampPage();
+        hotelMyCampPage.girisYap();
+       HMCWebTablePage hmcWebTablePage=new HMCWebTablePage();
+        System.out.println(hmcWebTablePage.allTableColumnNumber.size());
 
     }
 
@@ -47,19 +42,23 @@ public class C02_WebTables {
         //       ○ Table’daki tum body’I ve başlıkları(headers) konsolda yazdırın.
         //   ● printRows( ) metodu oluşturun //tr
         //       ○ table body’sinde bulunan toplam satir(row) sayısını bulun.
-        hmcWebTablePage = new HMCWebTablePage();
-        System.out.println(hmcWebTablePage.satirlarListesi.size());
+       HMCWebTablePage hmcWebTablePage=new HMCWebTablePage();
+        System.out.println();
+        System.out.println(hmcWebTablePage.allTableRowNumber.size());
+
 
         //       ○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
-        List<WebElement> satirlarWebelementListesi=hmcWebTablePage.satirlarListesi;
-
-        for (WebElement each:satirlarWebelementListesi) {
+        System.out.println();
+        for (WebElement each: hmcWebTablePage.allTableRowNumber) {
             System.out.println(each.getText());
-
         }
+
+
         //       ○ 4.satirdaki(row) elementleri konsolda yazdırın.
         System.out.println();
-        System.out.println("4. satir : "+satirlarWebelementListesi.get(3).getText());
+        for (WebElement each:hmcWebTablePage.line4Elements) {
+            System.out.println(each.getText());
+        }
 
     }
 }
