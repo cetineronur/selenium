@@ -15,7 +15,7 @@ public class C05_ExceliMapaYukleme {
         String path="src/test/java/resources/ulkeler.xlsx";
         String sayfaAdi="Sayfa1";
 
-        Map<String,String> ulkelerMap=ReusableMethods.mapOlustur(path, sayfaAdi);
+        Map<String,String> ulkelerMap= ReusableMethodsExcel.mapOlustur(path, sayfaAdi);
 
         //olusturdugunuz map'i kullanarak Turkey'in bilgilerinin yazdirin.
 
