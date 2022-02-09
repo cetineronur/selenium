@@ -12,23 +12,17 @@ import java.io.IOException;
 public class C01_TestNGReports extends TestBaseRapor {
 
     @Test
-    public void windowHandleReusableTest() throws IOException {
-        extentTest=extentReports.createTest("window handle","title ile 2. sayfaya gecis yapildi ve test edildi ");
-
+    public void windowHandlereusableTest() throws IOException {
+        extentTest = extentReports.createTest("window handle", "title ile 2.sayfaya gecis yapildigi test edildi");
         Driver.getDriver().get("https://the-internet.herokuapp.com/windows");
-        extentTest.info("herokuapp sayfasina gidildi.");
-
-        Driver.getDriver().findElement(By.xpath("//a[text()='Click Here']")).click();
+        extentTest.info("herokuapp sayfasina gidildi");
+        Driver.getDriver().findElement(By.linkText("Click Here")).click();
         extentTest.info("yeni window linkine tiklandi");
-
         ReusableMethods.switchToWindow("New Window");
-        extentTest.info("reusable method kullanarak acilan 2. sayfaya gecildi.");
-
-        String expectedTitle="New Window1";
-        String actualTitle=Driver.getDriver().getTitle();
-
-        Assert.assertEquals(actualTitle,expectedTitle);
-        extentTest.pass("title'nin beklenen degerle ayni oldugu test edildi.");
-
+        extentTest.info("resusable method kullanarak acilan ikinci sayfaya gecildi");
+        String expectedTitle = "New Window";
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
+        extentTest.pass("title'nin beklenen deger ile ayni oldugu test edildi");
     }
 }

@@ -10,7 +10,7 @@ public class FacebookPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//button[@title='Allow All Cookies']")
+    @FindBy(xpath = "//button[@title='Tüm Çerezlere İzin Ver']")
     public WebElement facebookCookies;
 
 
