@@ -25,14 +25,14 @@ public class P3_TutorialTestPage {
     @FindBy(xpath = "(//button[@data-toggle='dropdown'])[2]")
     public WebElement SepetButton;
 
-    @FindBy(linkText = "a']")
+    @FindBy(xpath = "//td[@class='text-left']")
     public List<WebElement> sepetList;
 
     @FindBy(xpath = "//td[text()='$583.19']")
     public WebElement totalPrice;
 
-    public void sepet(){
-        Driver.getDriver().findElement("")
-    }
+  // public void sepet(){
+  //     Driver.getDriver().findElement("")
+  // }
 
 }
