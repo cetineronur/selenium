@@ -5,6 +5,6 @@ Feature: US1003 parametre ile stepdefinition olusturma
 
     Given kullanici amazon sayfasina gider
     And "Java" icin arama yapar
-    Then sonuclarin "Java" icerdigini test eder
+    Then sonuclarin "Nutella" icerdigini test eder
     And sayfayi kapatir
 

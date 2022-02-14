@@ -7,15 +7,16 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin={"html:target\\cucumber-reports.html"},
         features="src/test/resources/features",
         glue = "stepdefinitions",
-        tags="@Editor",
-        dryRun = true
+        tags="@parametreliTest",
+        dryRun = false
 )
 
 public class Runner {
     // Runner class'inin body'sine hic bir kod yazmiyoruz
-    // bu class icin onemli olan kullanacagimiz 2 adet notasyon
+    // bu class icin nemli olan kullanacagimiz 2 adet notasyon
 
     // dryRun=false yazildiginda belirlenen tag'la etiketlenen tum scenario'lari sirasiyla calistirir
     // dryRun=true dedigimizde ise kodlari calistirmadan eksik stepler olup olmadigini kontrol eder

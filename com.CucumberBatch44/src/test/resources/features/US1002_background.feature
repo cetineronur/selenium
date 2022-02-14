@@ -10,7 +10,7 @@ Feature: US1002 Background ile amazon search testi
     And iPhone icin arama yapar
     Then sonuclarin iPhone icerdigini test eder
 
-    @wip
+    @rapor
   Scenario: TC03_Amazon tea pot  Search Testi
     And tea pot icin arama yapar
     Then sonuclarin tea pot icerdigini test eder
