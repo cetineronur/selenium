@@ -1,7 +1,8 @@
-cd..package utilities;
+package utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import utilities.Driver;
 
 public class JSUtils {
 

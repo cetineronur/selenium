@@ -1,10 +1,11 @@
-package tests.smokeTest;
+package tests.smoketest;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class PositiveLoginTest {
     //1) com.techproed altinda bir package olustur : smoketest
@@ -26,7 +27,9 @@ public class PositiveLoginTest {
        //test data username: manager ,
        hotelMyCampPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
        //test data password : Manager1!
+      ReusableMethods.waitFor(1);
        hotelMyCampPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+      ReusableMethods.waitFor(1);
        hotelMyCampPage.loginButonu.click();
        //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
        Assert.assertTrue(hotelMyCampPage.basariliGirisYaziElementi.isDisplayed());
