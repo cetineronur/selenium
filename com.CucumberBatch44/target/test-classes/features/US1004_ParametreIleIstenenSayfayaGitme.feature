@@ -1,3 +1,4 @@
+
 Feature: Parametre ile istenen sayfaya gitme
 
   Scenario: TC06 Eski usul amazona gitme
