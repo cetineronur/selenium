@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 import utilities.Driver;
 
 import java.util.List;
@@ -17,16 +16,6 @@ public class DemoqaPage {
 
     @FindBy(xpath = "//div[@class='rt-tr']")
     public WebElement baslikSatiriElementi;
-
-    @FindBy(xpath = "//div[@class='rt-resizable-header-content']")
-    public List<WebElement> depertmentNames;
-
-    @FindBy(xpath = "//div[@class='rt-td']")
-    public List<WebElement> allData;
-
-    @FindBy(xpath = "//div[@class='rt-tr-group']")
-    public List<WebElement> rowNumber;
-
 
     @FindBy(xpath = "//div[@class='rt-th rt-resizable-header -cursor-pointer']")
     public List<WebElement> basliklarWebelementiListesi;
@@ -69,6 +58,8 @@ public class DemoqaPage {
             dinamikXpath="((//div[@class='rt-tr-group'])["+i+"]//div[@class='rt-td'])["+5+"]";
             salary=Driver.getDriver().findElement(By.xpath(dinamikXpath)).getText();
 
+
+
             if (satirdakiIsim.equals(isim)){
                 System.out.println(salary);
             }
@@ -80,9 +71,5 @@ public class DemoqaPage {
         String dinamikXpath="((//div[@class='rt-tr-group'])["+satir+"]//div[@class='rt-td'])["+sutun+"]";
         System.out.println(Driver.getDriver().findElement(By.xpath(dinamikXpath)).getText());
 
-    }
-
-    public void cellGet(int row, int column) {
-        System.out.println(row+".satirdaki ve "+column+".sutundaki element: "+Driver.getDriver().findElement(By.xpath("//div[@class='rt-tr-group'][" + (row) + "]//div[@class='rt-td'][" + column + "]")).getText());
     }
 }

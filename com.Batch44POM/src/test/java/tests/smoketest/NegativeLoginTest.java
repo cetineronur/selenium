@@ -1,11 +1,10 @@
-package tests.smoketest;
+package tests.smokeTest;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class NegativeLoginTest {
 
@@ -23,7 +22,6 @@ public class NegativeLoginTest {
     public void yanlisSifreTesti(){
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
         hotelMyCampPage=new HotelMyCampPage();
-        ReusableMethods.waitFor(1);
         hotelMyCampPage.ilkLoginLinki.click();
         hotelMyCampPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
         hotelMyCampPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCWrongPassword"));
@@ -38,10 +36,8 @@ public class NegativeLoginTest {
         hotelMyCampPage=new HotelMyCampPage();
         hotelMyCampPage.ilkLoginLinki.click();
         hotelMyCampPage.usernameBox.sendKeys(ConfigReader.getProperty("HMCWrongUsername"));
-        ReusableMethods.waitFor(1);
         hotelMyCampPage.passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         hotelMyCampPage.loginButonu.click();
-        ReusableMethods.waitFor(1);
         Assert.assertTrue(hotelMyCampPage.girisYapilamadiYaziElementi.isDisplayed());
         Driver.closeDriver();
     }

@@ -1,6 +1,6 @@
 @parametreliTest
 Feature: US1003 parametre ile stepdefinition olusturma
-@toplu @paralel1
+  @toplu @paralel1
   Scenario: TC05_parametre kullanimi
 
     Given kullanici amazon sayfasina gider

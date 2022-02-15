@@ -6,39 +6,53 @@ import pages.HMCWebTablePage;
 import pages.HotelMyCampPage;
 import utilities.Driver;
 
-public class C01_WebTableDinamikLocate {
-    //3 test metodu olusturalim.
+public class C01_WebtableDinamikLocate {
+    // 3 test method'u olusturalim
+
+
+
 
     HMCWebTablePage hmcWebTablePage;
     HotelMyCampPage hotelMyCampPage;
-
-   @Test
-   public void rowGet(){
-       //1. method satir numarasi verdigimde bana o satirrdaki datalari yazdirsin
-
-        hmcWebTablePage = new HMCWebTablePage();
+    @Test
+    public void satirYazdirTesti(){
         hotelMyCampPage=new HotelMyCampPage();
         hotelMyCampPage.girisYap();
-       System.out.println(hmcWebTablePage.rowGet(4));
+      // 1.method satir numarasi verdigimde bana o satirdaki datalari yazdirsin
 
-   }
-    @Test
-    public void cellGet(){
-        hotelMyCampPage = new HotelMyCampPage();
-        hotelMyCampPage.girisYap();
-        hmcWebTablePage = new HMCWebTablePage();
-        //2.mehhod satir no ve data numarasi gidigimde verdigim datayi yazdirsin
-        System.out.println(hmcWebTablePage.cellGet(2, 4).getText());
-    }
-    @Test
-    public void columnGet(){
-        hotelMyCampPage = new HotelMyCampPage();
-        hotelMyCampPage.girisYap();
-        hmcWebTablePage = new HMCWebTablePage();
-        //3.method sutun numarasi verdigimde bana tum sutunu yazdirsin.
-        hmcWebTablePage.columnGet(5);
+        // 2.satiri yazdir  //tbody//tr[2]
+        // 7.satiri yazdir //tbody//tr[7]
 
+        hmcWebTablePage=new HMCWebTablePage();
+        WebElement ucuncusatirElementi=hmcWebTablePage.satirGetir(4);
+
+        System.out.println(ucuncusatirElementi.getText());
+
+        Driver.closeDriver();
     }
 
+    @Test
+    public void hucreGetirTesti(){
+        hotelMyCampPage=new HotelMyCampPage();
+        hotelMyCampPage.girisYap();
+        // 2. method satir no ve data numarasi girdigimde verdigim datayi yazdirsin
+        hmcWebTablePage=new HMCWebTablePage();
 
+        // 2.satirin 4.datasi   //tbody//tr[2]//td[4]
+        // 4.satirin 5.datasi   //tbody//tr[4]//td[5]
+
+        System.out.println("girdiginiz hucredki element : "+hmcWebTablePage.hucreWebelementGetir(5,3));
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void sutunYazdirTesti(){
+        hotelMyCampPage=new HotelMyCampPage();
+        hotelMyCampPage.girisYap();
+        // 3. sutun numarasi verdigimde bana tum sutunu yazdirsin
+        hmcWebTablePage=new HMCWebTablePage();
+        hmcWebTablePage.sutunYazdir(4);
+
+        Driver.closeDriver();
+    }
 }

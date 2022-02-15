@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="60.809">
-    <testcase classname="US1001 amazon search" name="TC01_Amazon Search Testi" time="43.002">
-        <system-out><![CDATA[Given kullanici amazon sayfasina gider......................................passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="44.214">
+    <testcase classname="US1001 amazon search" name="TC01_Amazon Search Testi" time="30.396">
+        <system-out>
+            <![CDATA[Given kullanici amazon sayfasina gider......................................passed
 And iPhone icin arama yapar.................................................passed
 Then sonuclarin iPhone icerdigini test eder.................................passed
 Given kullanici amazon sayfasina gider......................................passed
@@ -10,13 +11,16 @@ Then sonuclarin tea pot icerdigini test eder................................pass
 Given kullanici amazon sayfasina gider......................................passed
 And flower icin arama yapar.................................................passed
 Then sonuclarin flower icerdigini test eder.................................passed
-]]></system-out>
+]]>
+        </system-out>
     </testcase>
-    <testcase classname="US1003 parametre ile stepdefinition olusturma" name="TC05_parametre kullanimi" time="17.039">
-        <system-out><![CDATA[Given kullanici amazon sayfasina gider......................................passed
+    <testcase classname="US1003 parametre ile stepdefinition olusturma" name="TC05_parametre kullanimi" time="13.131">
+        <system-out>
+            <![CDATA[Given kullanici amazon sayfasina gider......................................passed
 And "Java" icin arama yapar.................................................passed
 Then sonuclarin "Java" icerdigini test eder.................................passed
 And sayfayi kapatir.........................................................passed
-]]></system-out>
+]]>
+        </system-out>
     </testcase>
 </testsuite>

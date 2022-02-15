@@ -9,55 +9,61 @@ import utilities.Driver;
 import java.util.List;
 
 public class HMCWebTablePage {
+    public HMCWebTablePage(){
+        PageFactory.initElements(Driver.getDriver(),this);
+    }
 
-   public HMCWebTablePage(){
-       PageFactory.initElements(Driver.getDriver(),this);
-   }
-
-   @FindBy(xpath = "//tbody//tr[1]//td")
-   public List<WebElement> allTableColumnNumber;
-
-   @FindBy(xpath = "//tbody//tr")
-   public List<WebElement> allTableRowNumber;
-
-   @FindBy(xpath = "//tbody//tr[4]//td")
-   public List<WebElement> line4Elements;
-
-
-
-    @FindBy(xpath = "//thead//tr[1]//th")
+    @FindBy (xpath = "//thead//tr[1]//th")
     public List<WebElement> headerBirinciSatirDatalar;
 
     @FindBy(xpath = "//tbody")
-    public WebElement tumBodyWebElement;
+    public WebElement tumBodyWebElementi;
+
 
     @FindBy(xpath = "//tbody//td")
     public List<WebElement> tumBodyDatalariList;
+
 
     @FindBy(xpath = "//tbody//tr")
     public List<WebElement> satirlarListesi;
 
 
+    public WebElement satirGetir(int satirNo){
 
-    public WebElement rowGet(int row) {
-        WebElement rowGet=Driver.getDriver().findElement(By.xpath("//tbody/tr["+row+"]"));
 
-        return rowGet;
+        // 2.satiri yazdir  //tbody//tr[2]
+        // 7.satiri yazdir //tbody//tr[7]
+
+        String satirDinamikXpath= "//tbody//tr["+ satirNo +"]";
+        WebElement satirElementi=Driver.getDriver().findElement(By.xpath(satirDinamikXpath));
+
+        return satirElementi;
     }
 
-    public WebElement cellGet(int row, int column) {
 
-        WebElement cellGet=Driver.getDriver().findElement(By.xpath("//tbody//tr["+row+"]//td["+column+"]"));
-        return cellGet;
+    public String  hucreWebelementGetir(int satir, int sutun) {
+        // 2.satirin 4.datasi   //tbody//tr[2]//td[4]
+        // 4.satirin 5.datasi   //tbody//tr[4]//td[5]
 
+        String dinamikHucreXpath="//tbody//tr["+ satir  +"]//td["+ sutun  +"]";
+        WebElement istenenHucreElementi=Driver.getDriver().findElement(By.xpath(dinamikHucreXpath));
+        String hucreDatasi=istenenHucreElementi.getText();
+
+        return hucreDatasi;
     }
 
-    public void columnGet(int column) {
+    public void sutunYazdir(int sutun) {
 
-        int totalRowNumber=allTableRowNumber.size();
+        // her bir satirdaki istenen sutun elementini yazdirabilmek icin
+        // once satir sayisini bilmeye ihtiyacim var
 
-        for (int i=1;i<=totalRowNumber;i++){
-            System.out.println(cellGet(i, column).getText());
+        int satirsayisi=satirlarListesi.size();
+
+        for (int i=1 ; i<=satirsayisi ; i++ ){
+            System.out.println(hucreWebelementGetir(i, sutun));
         }
+
+
+
     }
 }

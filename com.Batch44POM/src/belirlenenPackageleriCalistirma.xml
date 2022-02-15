@@ -2,7 +2,7 @@
 <suite name="package calistirma">
     <test name="smoke test">
         <packages>
-            <package name="tests.smoketest"></package>
+            <package name="tests.smokeTest"></package>
         </packages>
     </test>
 </suite>

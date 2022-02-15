@@ -5,12 +5,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FacebookPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class C02_FacebookTesti extends TestBaseRapor {
+
     @Test
-    public void test01() throws InterruptedException {
+    public void test01()  {
         extentTest=extentReports.createTest("facebook","fake isimle girilemedigi test edildi");
+
         // 1 - https://www.facebook.com/ adresine gidin
         Driver.getDriver().get("https://www.facebook.com/");
         extentTest.info("facebook sayfasina gidildi");
@@ -31,8 +34,5 @@ public class C02_FacebookTesti extends TestBaseRapor {
         Assert.assertTrue(facebookPage.girilemediYazisiElemnti.isDisplayed());
         extentTest.pass("girilemedigi test edildi");
 
-
     }
-
-
 }
