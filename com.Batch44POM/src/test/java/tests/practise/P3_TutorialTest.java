@@ -30,8 +30,6 @@ public class P3_TutorialTest {
 
 //~ listenin isimlerini sepetten al
 
-        System.out.println("sepetteki urunler: ");
-
 
         for (WebElement each:p3_tutorialTestPage.sepetList) {
             System.out.println(each.getText());
