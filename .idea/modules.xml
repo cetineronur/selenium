@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/batch44Api/batch44Api.iml" filepath="$PROJECT_DIR$/batch44Api/batch44Api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.Batch44Junit/com.Batch44JUnit.iml" filepath="$PROJECT_DIR$/com.Batch44Junit/com.Batch44JUnit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.Batch44POM/com.Batch44POM.iml" filepath="$PROJECT_DIR$/com.Batch44POM/com.Batch44POM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.CucumberBatch44/com.CucumberBatch44.iml" filepath="$PROJECT_DIR$/com.CucumberBatch44/com.CucumberBatch44.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.MavenBatch44/com.MavenBatch44Y.iml" filepath="$PROJECT_DIR$/com.MavenBatch44/com.MavenBatch44Y.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.TestNGBatch44/com.TestNGBatch44.iml" filepath="$PROJECT_DIR$/com.TestNGBatch44/com.TestNGBatch44.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.batchSelenium/com.batch44Selenium.iml" filepath="$PROJECT_DIR$/com.batchSelenium/com.batch44Selenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/com.batchSelenium.iml" filepath="$PROJECT_DIR$/.idea/com.batchSelenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbcBatch44/jdbcBatch44.iml" filepath="$PROJECT_DIR$/jdbcBatch44/jdbcBatch44.iml" />
+    </modules>
+  </component>
+</project>

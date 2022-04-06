@@ -25,7 +25,7 @@ public class DemoGuruPage {
 
     public List<WebElement> sutunListesiGetir(int index){
 
-        //     //tbody//tr//td[3]
+        //   //tbody//tr//td[3]
 
         String dinamikXpath= "//tbody//tr//td["+(index+1)+"]";
 

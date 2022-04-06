@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jdbcBatch44" />
+        <module name="com.MavenBatch44Y" />
+        <module name="batch44Api" />
+        <module name="com.batch44Selenium" />
+        <module name="com.Batch44JUnit" />
+        <module name="com.TestNGBatch44" />
+        <module name="com.Batch44POM" />
+        <module name="com.CucumberBatch44" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="batch44Api" target="17" />
+      <module name="com.Batch44JUnit" target="11" />
+      <module name="com.Batch44POM" target="11" />
+      <module name="com.batch44Selenium" target="11" />
+      <module name="com.CucumberBatch44" target="17" />
+      <module name="com.MavenBatch44Y" target="11" />
+      <module name="com.TestNGBatch44" target="17" />
+      <module name="jdbcBatch44" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
